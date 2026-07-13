@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-paper: #f4f1e9;
+  --color-paper-deep: #e9e3d6;
+  --color-ink: #171714;
+  --color-muted: #69665e;
+  --color-vermilion: #c43b2f;
+  --color-vermilion-dark: #98291f;
+  --color-gold: #aa7c32;
+  --color-night: #11120f;
+  --font-sans: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-serif: STSong, SimSun, "Noto Serif CJK SC", serif;
+  --font-kai: STKaiti, KaiTi, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --shadow-paper: 0 24px 70px rgba(37, 31, 20, 0.12);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply m-0 bg-paper text-ink antialiased dark:bg-[#171714] dark:text-[#f2eee4];
+    background-image:
+      radial-gradient(circle at 90% 8%, rgba(196, 59, 47, 0.09), transparent 27rem),
+      linear-gradient(90deg, rgba(89, 76, 47, 0.025) 1px, transparent 1px),
+      linear-gradient(rgba(89, 76, 47, 0.025) 1px, transparent 1px);
+    background-size: auto, 28px 28px, 28px 28px;
+  }
+  button, input { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  code, pre { @apply font-mono; }
+  ::selection { @apply bg-vermilion text-white; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-[min(calc(100%-2.5rem),74rem)] max-sm:w-[min(calc(100%-1.75rem),74rem)]; }
+  .eyebrow { @apply inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.14em] text-vermilion-dark before:h-0.5 before:w-6 before:bg-current dark:text-[#ef756a]; }
+  .button-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-vermilion bg-vermilion px-5 text-sm font-semibold text-white no-underline transition hover:-translate-y-0.5 hover:bg-vermilion-dark hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermilion; }
+  .button-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-black/15 bg-transparent px-5 text-sm font-semibold text-current no-underline transition hover:-translate-y-0.5 hover:border-black/30 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vermilion dark:border-white/15 dark:hover:border-white/30; }
+  .panel { @apply rounded-[1.25rem] border border-black/10 bg-white/35 dark:border-white/10 dark:bg-white/[0.025]; }
+  .prose-code { @apply overflow-x-auto rounded-2xl border border-white/5 bg-night p-6 text-sm leading-7 text-[#ece9df] shadow-lg; }
+  .inline-code { @apply rounded-md border border-black/10 bg-black/5 px-1.5 py-0.5 font-mono text-[0.9em] text-current dark:border-white/10 dark:bg-white/[0.06]; }
+  .doc-heading { @apply scroll-mt-28 border-t border-black/10 pt-16 font-serif text-3xl font-bold tracking-[-0.035em] first:border-0 first:pt-0 dark:border-white/10; }
+}
+
+.syntax-keyword { color: #f18772; }
+.syntax-string { color: #e9c579; }
+.syntax-type { color: #86c7b4; }
+.syntax-comment { color: #747970; }
+.syntax-function { color: #b9a7e2; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
