@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yanxulang.github.io/website/sitemap.xml
+Sitemap: https://yanxu.dev/sitemap.xml

@@ -11,7 +11,7 @@ const platforms = [
 ] as const;
 
 const tabs = [
-  ["macOS / Linux", unixInstall], ["Windows", windowsInstall], ["Cargo", "cargo install --git https://github.com/YanXuLang/language"]
+  ["macOS / Linux", unixInstall], ["Windows", windowsInstall], ["Cargo", "cargo install --git https://github.com/YanXuLang/yanxu"]
 ] as const;
 
 export function DownloadPage() {

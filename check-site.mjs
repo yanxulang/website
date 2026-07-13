@@ -22,10 +22,10 @@ for (const page of pages) {
     const link = match[1];
     if (/^(?:https?:|mailto:|data:)/.test(link)) continue;
     const [pathname, hash] = link.split("#");
-    const projectRelative = pathname?.startsWith("/")
-      ? pathname.replace(/^\/[^/]+\//, "")
-      : pathname;
-    let target = projectRelative ? path.resolve(projectRelative === pathname ? path.dirname(page) : site, projectRelative) : page;
+    const projectRelative = pathname?.startsWith("/") ? pathname.slice(1) : pathname;
+    let target = projectRelative
+      ? path.resolve(pathname?.startsWith("/") ? site : path.dirname(page), projectRelative)
+      : page;
     if (pathname?.endsWith("/")) target = path.join(target, "index.html");
     if (!fs.existsSync(target)) failures.push(`${path.relative(site, page)} → ${link}`);
     if (!pathname && hash && !ids.has(hash)) failures.push(`${path.relative(site, page)} → #${hash}`);

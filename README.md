@@ -5,9 +5,9 @@
 
 言序官方网站，由 React、TypeScript、Tailwind CSS 与 Vite 构建，并独立发布到 GitHub Pages。
 
-- 官网：https://yanxulang.github.io/website/
-- 文档：https://yanxulang.github.io/docs/
-- 下载中心：https://yanxulang.github.io/website/download/
+- 官网：https://yanxu.dev/
+- 文档：https://docs.yanxu.dev/
+- 下载中心：https://yanxu.dev/download/
 
 ## 开发
 
@@ -18,4 +18,4 @@ npm run build
 node check-site.mjs dist
 ```
 
-语言核心、文档与 VS Code 扩展分别位于 `YanXuLang/language`、`YanXuLang/docs` 与 `YanXuLang/vscode`。
+语言核心、文档与 VS Code 扩展分别位于 `YanXuLang/yanxu`、`YanXuLang/docs` 与 `YanXuLang/vscode-extension`。
