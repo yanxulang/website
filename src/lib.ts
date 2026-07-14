@@ -2,7 +2,8 @@ export const repository = "https://github.com/YanXuLang/yanxu";
 export const hubRepository = "https://github.com/YanXuLang/yanxu";
 export const vscodeRepository = "https://github.com/YanXuLang/vscode-extension";
 export const docsUrl = "https://docs.yanxu.dev/";
-export const version = "1.0.0";
+export const version = "1.0.1";
+export const vscodeVersion = "1.0.1";
 // GitHub Release 工作流会为当前稳定版本生成六个平台资产及校验文件。
 export const binaryDownloadsReady = true;
 export const releaseTag = `v${version}`;
