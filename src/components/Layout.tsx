@@ -13,7 +13,7 @@ const links: Array<{ page?: Page; label: string; href: string }> = [
 function Brand() {
   return (
     <a href={sitePath()} className="inline-flex items-center gap-3 font-bold tracking-wide no-underline">
-      <span className="grid size-10 place-items-center rounded-[11px_11px_11px_4px] bg-vermilion font-kai text-xl text-[#fff9ed] shadow-[inset_0_0_0_1px_rgba(255,255,255,.28)]">言</span>
+      <img src={sitePath("icon.svg")} alt="" width="40" height="40" className="size-10" />
       <span>言序</span>
     </a>
   );
