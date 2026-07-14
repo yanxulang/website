@@ -5,7 +5,7 @@ const features = [
   ["壹", "文", "自然的中文语序", "以「令」「若」「当」「法」「类」组织代码。全角半角标点均可，诊断准确指向源码。"],
   ["贰", "型", "执行前静态检查", "可选标注保持轻便；继承/覆写检查与「值 是 类型」分支收窄又能提前阻止确定错误。"],
   ["叁", "器", "完整对象与双引擎", "单继承、协议、动态派发与「父.方法」由树解释器和独立字节码 VM 一致执行。"],
-  ["肆", "网", "生产 I/O 与标准库", "22 个双引擎标准模块覆盖数据与宿主能力；HTTP/HTTPS 与 TCP/UDP 套接字均有权限、超时、上限和稳定错误代码。"],
+  ["肆", "网", "二进制与生产 I/O", "23 个双引擎标准模块覆盖任意字节、文件、HTTPS 与 TCP/UDP；权限、超时、EOF、上限和错误均有稳定语义。"],
   ["伍", "候", "结构化任务", "「异 法」产生可取消任务；「候」与「并候」以确定顺序传播结果、失败和取消。"],
   ["陆", "工", "1.0 稳定工具链", "规范、兼容迁移、资源预算、语义 LSP、DAP、测试、API 文档与 Tree-sitter 已形成完整闭环。"]
 ];
@@ -15,6 +15,7 @@ const syntax = [
   ["判断", "若 来客 是 鹤 则 … 否则 … 终"], ["迭代", "逐 项 于 名录 则 … 终"],
   ["父类", "归 父.自述（） 加 「，鹤」；"],
   ["函数", "法 加一（值：数）：数 则 … 终"], ["任务", "异 法 求（）：数 则 … 终；候 求（）"],
+  ["字节", "定 数据：字节串 为 字节.从文字（「言序」）；"],
   ["错误", "试 则 … 救 所误 则 … 终"]
 ];
 
@@ -36,7 +37,7 @@ export function HomePage() {
           <div>
             <span className="eyebrow">Yanxu Programming Language</span>
             <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">以中文<br /><span className="text-vermilion">写程序。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.3 是一门由 Rust 驱动的稳定中文编程语言。保留文言的简洁与节奏，也提供完整对象、类型判断、逐跳授权的 HTTPS、受 DNS 复查和配额保护的 TCP/UDP 套接字、模块、任务、沙箱嵌入与完整工具链。</p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.4 是一门由 Rust 驱动的稳定中文编程语言。它新增不可变字节串、二进制文件/HTTPS/TCP/UDP、安全随机与 HMAC，同时保留完整对象、类型判断、沙箱权限、双引擎与完整工具链。</p>
             <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>五分钟入门 <span aria-hidden="true">→</span></a><a className="button-secondary" href={repository}>查看源码</a></div>
             <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
           </div>
@@ -44,7 +45,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.3", "当前稳定发行"], ["双引擎", "树解释器 · 独立 VM"], ["22 库", "含 HTTPS 与 TCP/UDP"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.4", "当前稳定发行"], ["双引擎", "树解释器 · 独立 VM"], ["23 库", "含字节与安全网络"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
         <div className="grid items-end gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16"><div><span className="eyebrow">语言所长</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文是本体，<br />不是皮肤。</h2></div><p className="max-w-2xl text-lg leading-8 text-muted dark:text-[#aaa69b]">从关键字到错误信息，言序都直接用中文思考。它不是把另一门语言逐词翻译过来，而是在现代工程约束下寻找中文程序的自然表达。</p></div>
