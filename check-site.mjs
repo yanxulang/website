@@ -2,8 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
-const site = path.resolve(process.argv[2] || "website");
+const site = path.resolve(process.argv[2] || "dist");
 const pages = [];
+
+if (!fs.existsSync(site)) {
+  console.error(`找不到站点输出目录：${site}；请先执行 npm run build。`);
+  process.exit(1);
+}
 
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -14,6 +19,10 @@ function walk(directory) {
 }
 
 walk(site);
+if (pages.length === 0) {
+  console.error(`站点输出目录中没有 HTML 页面：${site}`);
+  process.exit(1);
+}
 const failures = [];
 for (const page of pages) {
   const html = fs.readFileSync(page, "utf8");

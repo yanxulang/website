@@ -2,10 +2,15 @@ export const repository = "https://github.com/YanXuLang/yanxu";
 export const hubRepository = "https://github.com/YanXuLang/yanxu";
 export const vscodeRepository = "https://github.com/YanXuLang/vscode-extension";
 export const docsUrl = "https://docs.yanxu.dev/";
-export const version = "0.3.0-alpha.1";
+export const version = "1.0.0";
+// GitHub Release 工作流会为当前稳定版本生成六个平台资产及校验文件。
+export const binaryDownloadsReady = true;
 export const releaseTag = `v${version}`;
-export const releaseUrl = `${repository}/releases/tag/${releaseTag}`;
+export const releaseUrl = `${repository}/releases`;
 export const releaseDownloadUrl = `${repository}/releases/download/${releaseTag}`;
+export const sourceArchiveUrl = binaryDownloadsReady
+  ? `${repository}/archive/refs/tags/${releaseTag}.tar.gz`
+  : `${repository}/archive/refs/heads/main.tar.gz`;
 export const base = import.meta.env.BASE_URL;
 
 export function sitePath(path = "") {
