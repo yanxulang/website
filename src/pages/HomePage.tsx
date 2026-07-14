@@ -5,7 +5,7 @@ const features = [
   ["壹", "文", "自然的中文语序", "以「令」「若」「当」「法」「类」组织代码。全角半角标点均可，诊断准确指向源码。"],
   ["贰", "型", "执行前静态检查", "可选标注保持轻便，联合类型与「yanxu 查」又能在执行前阻止确定错误。"],
   ["叁", "器", "双执行路径", "树解释器守住参考语义；独立字节码 VM 执行闭包、对象、异常与模块，并由一致性规格持续对照。"],
-  ["肆", "数", "数据与标准库", "列、元组、典、切片与统一迭代之外，17 个双引擎标准模块覆盖文件、编码、统计、随机、标识、模板与校验。"],
+  ["肆", "数", "数据与标准库", "列、元组、典、切片与统一迭代之外，21 个双引擎标准模块覆盖文件、编码、统计、正则、URL、日期与 Base64。"],
   ["伍", "候", "结构化任务", "「异 法」产生可取消任务；「候」与「并候」以确定顺序传播结果、失败和取消。"],
   ["陆", "工", "1.0 稳定工具链", "规范、兼容迁移、资源预算、语义 LSP、DAP、测试、API 文档与 Tree-sitter 已形成完整闭环。"]
 ];
@@ -43,7 +43,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.0", "稳定规范与源码兼容承诺"], ["双引擎", "树解释器 · 独立 VM"], ["17 库", "双执行器标准模块"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.0", "稳定规范与源码兼容承诺"], ["双引擎", "树解释器 · 独立 VM"], ["21 库", "双执行器标准模块"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
         <div className="grid items-end gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16"><div><span className="eyebrow">语言所长</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文是本体，<br />不是皮肤。</h2></div><p className="max-w-2xl text-lg leading-8 text-muted dark:text-[#aaa69b]">从关键字到错误信息，言序都直接用中文思考。它不是把另一门语言逐词翻译过来，而是在现代工程约束下寻找中文程序的自然表达。</p></div>
