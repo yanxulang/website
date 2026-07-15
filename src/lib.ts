@@ -3,12 +3,15 @@ export const hubRepository = "https://github.com/YanXuLang/yanxu";
 export const vscodeRepository = "https://github.com/YanXuLang/vscode-extension";
 export const yanbaoRepository = "https://github.com/YanXuLang/yanbao";
 export const guiRepository = "https://github.com/YanXuLang/yanxu-gui";
+export const platformRepository = "https://github.com/YanXuLang/yanxu-platform";
+export const uiRepository = "https://github.com/YanXuLang/yanxu-ui";
 export const docsUrl = "https://docs.yanxu.dev/";
-export const version = "1.1.7";
+export const guiDocsUrl = `${docsUrl}gui/`;
+export const version = "1.1.8";
 export const vscodeVersion = "1.4.0";
 export const yanbaoVersion = "0.5.0";
 // GitHub Release 工作流会为当前稳定版本生成六个平台资产及校验文件。
-export const binaryDownloadsReady = false;
+export const binaryDownloadsReady = true;
 export const releaseTag = `v${version}`;
 export const releaseUrl = `${repository}/releases`;
 export const releaseDownloadUrl = `${repository}/releases/download/${releaseTag}`;
