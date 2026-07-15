@@ -3,9 +3,9 @@ import { docsUrl, repository, sitePath, unixInstall } from "../lib";
 
 const capabilities = [
   ["中文表达", "中文关键字、标识符与诊断信息，支持全角和半角标点。"],
-  ["工程工具", "静态检查、格式化、测试、包管理、LSP 与 DAP 集成。"],
-  ["应用构建", "字节码 VM、YXB 制品和当前平台的自包含应用。"],
-  ["明确边界", "模块导出、依赖锁图与文件、网络、进程权限声明。"]
+  ["工程工具", "静态检查、格式化、测试、包管理、LSP、DAP 与 ABI v2。"],
+  ["桌面 GUI", "官方言窗提供窗口、控件、中文 IME 与三平台 Bundle。"],
+  ["明确边界", "模块导出、依赖锁图与文件、网络、GUI 等独立权限声明。"]
 ];
 
 function CodeWindow() {
@@ -29,7 +29,7 @@ export function HomePage() {
           <div>
             <span className="eyebrow">Yanxu Programming Language</span>
             <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">用中文，<br /><span className="text-vermilion">构建软件。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序是一门面向现代软件工程的中文编程语言，提供静态检查、包管理、字节码应用与可嵌入运行时。</p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.7 提供静态检查、包管理、字节码应用、ABI v2 与官方言窗，可从中文源码构建 Windows、macOS、Linux 桌面应用。</p>
             <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>快速开始 <span aria-hidden="true">→</span></a><a className="button-secondary" href={repository}>GitHub</a></div>
             <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
           </div>
@@ -37,7 +37,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.6", "稳定版本"], ["双引擎", "解释器与 VM"], ["25", "标准模块"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.7", "当前源码版本"], ["双引擎", "解释器与 VM"], ["三平台", "桌面 GUI"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
         <div className="max-w-2xl"><span className="eyebrow">核心能力</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文语法，完整工具链。</h2></div>
