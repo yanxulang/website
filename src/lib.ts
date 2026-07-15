@@ -3,8 +3,9 @@ export const hubRepository = "https://github.com/YanXuLang/yanxu";
 export const vscodeRepository = "https://github.com/YanXuLang/vscode-extension";
 export const yanbaoRepository = "https://github.com/YanXuLang/yanbao";
 export const docsUrl = "https://docs.yanxu.dev/";
-export const version = "1.1.5";
-export const vscodeVersion = "1.3.1";
+export const version = "1.1.6";
+export const vscodeVersion = "1.3.2";
+export const yanbaoVersion = "0.2.1";
 // GitHub Release 工作流会为当前稳定版本生成六个平台资产及校验文件。
 export const binaryDownloadsReady = true;
 export const releaseTag = `v${version}`;
@@ -23,3 +24,5 @@ export const unixInstall =
   "curl -fsSL https://raw.githubusercontent.com/YanXuLang/yanxu/main/scripts/install.sh | sh";
 export const windowsInstall =
   "irm https://raw.githubusercontent.com/YanXuLang/yanxu/main/scripts/install.ps1 | iex";
+export const yanbaoUnixInstall =
+  "curl -fsSL https://raw.githubusercontent.com/YanXuLang/yanbao/main/scripts/install.sh | sh";

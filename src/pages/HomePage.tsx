@@ -7,7 +7,7 @@ const features = [
   ["叁", "器", "完整对象与双引擎", "单继承、协议、动态派发与「父.方法」由树解释器和独立字节码 VM 一致执行。"],
   ["肆", "网", "二进制与生产 I/O", "25 个双引擎标准模块覆盖任意字节、资源、进程、HTTPS 与 TCP/UDP；权限、超时、EOF、上限和错误均有稳定语义。"],
   ["伍", "候", "结构化任务", "「异 法」产生可取消任务；「候」与「并候」以确定顺序传播结果、失败和取消。"],
-  ["陆", "工", "完整工程体验", "格式 2 完整锁图、纯言序言包、源码无关 YXB、自包含应用与原生 ABI v1 形成构建和分发闭环。"]
+  ["陆", "工", "完整工程体验", "格式 2 完整锁图、独立发布的纯言序言包、受限 YXB、自包含应用与原生 ABI v1 形成构建和分发闭环。"]
 ];
 
 const syntax = [
@@ -37,7 +37,7 @@ export function HomePage() {
           <div>
             <span className="eyebrow">Yanxu Programming Language</span>
             <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">以中文<br /><span className="text-vermilion">写程序。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.5 是一门由 Rust 驱动的稳定中文编程语言。它新增完整包图、源码无关 YXB、自包含应用与原生扩展 ABI；官方言包已完全由言序编写，先安装言序即可直接运行。</p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.6 是一门由 Rust 驱动的稳定中文编程语言。本版收紧 YXB 权限与资源边界、原生扩展装载和发布追溯；官方言包仍完全由言序编写，并以自带专用运行时的独立 Release 分发。</p>
             <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>五分钟入门 <span aria-hidden="true">→</span></a><a className="button-secondary" href={repository}>查看源码</a></div>
             <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
           </div>
@@ -45,7 +45,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.5", "当前源码版本"], ["双引擎", "树解释器 · 独立 VM"], ["25 库", "含进程与应用资源"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.6", "当前稳定版本"], ["双引擎", "树解释器 · 独立 VM"], ["25 库", "含进程与应用资源"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
         <div className="grid items-end gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16"><div><span className="eyebrow">语言所长</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文是本体，<br />不是皮肤。</h2></div><p className="max-w-2xl text-lg leading-8 text-muted dark:text-[#aaa69b]">从关键字到错误信息，言序都直接用中文思考。它不是把另一门语言逐词翻译过来，而是在现代工程约束下寻找中文程序的自然表达。</p></div>
