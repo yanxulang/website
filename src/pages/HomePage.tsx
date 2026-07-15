@@ -38,7 +38,7 @@ export function HomePage() {
           <div>
             <span className="eyebrow">Yanxu Programming Language</span>
             <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">用中文，<br /><span className="text-vermilion">构建软件。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.7 提供静态检查、包管理、字节码应用与 ABI v2；言窗和新的言界／言台路线可从同一份中文源码构建 Windows、macOS、Linux 原生桌面应用。</p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.8 提供静态检查、包管理、字节码应用与 ABI v2，并修复 Windows 图形回调栈；言窗和新的言界／言台路线可从同一份中文源码构建 Windows、macOS、Linux 原生桌面应用。</p>
             <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>快速开始 <span aria-hidden="true">→</span></a><a className="button-secondary" href={guiDocsUrl}>图形界面</a><a className="button-secondary" href={repository}>GitHub</a></div>
             <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
           </div>
@@ -46,7 +46,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.7", "当前源码版本"], ["双引擎", "解释器与 VM"], ["六目标", "原生桌面 GUI"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.8", "当前源码版本"], ["双引擎", "解释器与 VM"], ["六目标", "原生桌面 GUI"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
         <div className="max-w-2xl"><span className="eyebrow">核心能力</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文语法，完整工具链。</h2></div>
