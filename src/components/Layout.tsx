@@ -1,11 +1,12 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { docsUrl, hubRepository, repository, sitePath } from "../lib";
+import { docsUrl, guiDocsUrl, hubRepository, repository, sitePath } from "../lib";
 
 type Page = "home" | "download";
 
 const links: Array<{ page?: Page; label: string; href: string }> = [
   { page: "home", label: "首页", href: sitePath() },
   { label: "文档", href: docsUrl },
+  { label: "图形界面", href: guiDocsUrl },
   { page: "download", label: "下载", href: sitePath("download/") },
   { label: "GitHub", href: hubRepository }
 ];
@@ -65,7 +66,7 @@ export function Layout({ page, children }: { page: Page; children: ReactNode }) 
         <div className="shell">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_repeat(3,.7fr)]">
             <div className="sm:col-span-2 lg:col-span-1"><Brand /><p className="mt-4 max-w-xs text-sm text-muted dark:text-[#aaa69b]">一门具有文言气韵、面向现代工程的中文编程语言。</p></div>
-            <FooterColumn title="学习" links={[["快速开始", docsUrl], ["语法参考", `${docsUrl}language/`], ["架构", `${docsUrl}architecture/`]]} />
+            <FooterColumn title="学习" links={[["快速开始", docsUrl], ["图形界面", guiDocsUrl], ["语法参考", `${docsUrl}language/`]]} />
             <FooterColumn title="获取" links={[["下载", sitePath("download/")], ["VS Code", sitePath("download/#vscode")], ["版本记录", `${repository}/releases`]]} />
             <FooterColumn title="社区" links={[["GitHub", hubRepository], ["问题反馈", `${hubRepository}/issues`], ["参与贡献", `${repository}/blob/main/CONTRIBUTING.md`]]} />
           </div>
