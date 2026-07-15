@@ -1,30 +1,22 @@
 import { CopyButton } from "../components/CopyButton";
 import { docsUrl, repository, sitePath, unixInstall } from "../lib";
 
-const features = [
-  ["壹", "文", "自然的中文语序", "以「令」「若」「当」「法」「类」组织代码。全角半角标点均可，诊断准确指向源码。"],
-  ["贰", "型", "执行前静态检查", "可选标注保持轻便；继承/覆写检查与「值 是 类型」分支收窄又能提前阻止确定错误。"],
-  ["叁", "器", "完整对象与双引擎", "单继承、协议、动态派发与「父.方法」由树解释器和独立字节码 VM 一致执行。"],
-  ["肆", "网", "二进制与生产 I/O", "25 个双引擎标准模块覆盖任意字节、资源、进程、HTTPS 与 TCP/UDP；权限、超时、EOF、上限和错误均有稳定语义。"],
-  ["伍", "候", "结构化任务", "「异 法」产生可取消任务；「候」与「并候」以确定顺序传播结果、失败和取消。"],
-  ["陆", "工", "完整工程体验", "格式 2 完整锁图、独立发布的纯言序言包、受限 YXB、自包含应用与原生 ABI v1 形成构建和分发闭环。"]
-];
-
-const syntax = [
-  ["声明", "令 年岁：数 为 18；"], ["不可改写", "定 名录：列 为【「甲」，「乙」】；"],
-  ["判断", "若 来客 是 鹤 则 … 否则 … 终"], ["迭代", "逐 项 于 名录 则 … 终"],
-  ["父类", "归 父.自述（） 加 「，鹤」；"],
-  ["函数", "法 加一（值：数）：数 则 … 终"], ["任务", "异 法 求（）：数 则 … 终；候 求（）"],
-  ["字节", "定 数据：字节串 为 字节.从文字（「言序」）；"],
-  ["错误", "试 则 … 救 所误 则 … 终"]
+const capabilities = [
+  ["中文表达", "中文关键字、标识符与诊断信息，支持全角和半角标点。"],
+  ["工程工具", "静态检查、格式化、测试、包管理、LSP 与 DAP 集成。"],
+  ["应用构建", "字节码 VM、YXB 制品和当前平台的自包含应用。"],
+  ["明确边界", "模块导出、依赖锁图与文件、网络、进程权限声明。"]
 ];
 
 function CodeWindow() {
   return (
-    <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-night text-[#ece9df] shadow-paper lg:rotate-[1.2deg]">
-      <div className="flex h-12 items-center border-b border-white/10 px-4 text-xs text-white/50"><span className="mr-4 flex gap-1.5"><i className="size-2 rounded-full bg-vermilion" /><i className="size-2 rounded-full bg-white/25" /><i className="size-2 rounded-full bg-white/25" /></span>初见.yx</div>
-      <pre className="overflow-x-auto p-6 text-[13px] leading-7 sm:p-8 sm:text-sm"><code><span className="syntax-comment"># 定义一位有类型的人</span>{"\n"}<span className="syntax-keyword">类</span> 人 <span className="syntax-keyword">则</span>{"\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">初始化</span>（姓名：<span className="syntax-type">文</span>）<span className="syntax-keyword">则</span>{"\n"}    <span className="syntax-keyword">置</span> 此.姓名 <span className="syntax-keyword">为</span> 姓名；{"\n"}  <span className="syntax-keyword">终</span>{"\n\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">问候</span>（）：<span className="syntax-type">文</span> <span className="syntax-keyword">则</span>{"\n"}    <span className="syntax-keyword">归</span> <span className="syntax-string">「吾名」</span> 加 此.姓名；{"\n"}  <span className="syntax-keyword">终</span>{"\n"}<span className="syntax-keyword">终</span>{"\n\n"}<span className="syntax-keyword">定</span> 子：人 <span className="syntax-keyword">为</span> 人（<span className="syntax-string">「言序」</span>）；{"\n"}<span className="syntax-keyword">言</span> 子.问候（）；</code></pre>
-      <div className="flex items-center gap-3 border-t border-white/10 px-6 py-3 text-xs text-white/55"><span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_0_5px_rgba(52,211,153,.12)]" />吾名言序 <span className="ml-auto">18 ms</span></div>
+    <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-night text-[#ece9df] shadow-paper">
+      <div className="flex h-12 items-center border-b border-white/10 px-4 text-xs text-white/50">
+        <span className="mr-4 flex gap-1.5"><i className="size-2 rounded-full bg-vermilion" /><i className="size-2 rounded-full bg-white/25" /><i className="size-2 rounded-full bg-white/25" /></span>
+        你好.yx
+      </div>
+      <pre className="overflow-x-auto p-6 text-sm leading-7 sm:p-8"><code><span className="syntax-keyword">法</span> <span className="syntax-function">问候</span>（姓名：<span className="syntax-type">文</span>）：<span className="syntax-type">文</span> <span className="syntax-keyword">则</span>{"\n"}  <span className="syntax-keyword">归</span> <span className="syntax-string">「你好，」</span> 加 姓名 加 <span className="syntax-string">「！」</span>；{"\n"}<span className="syntax-keyword">终</span>{"\n\n"}<span className="syntax-keyword">言</span> 问候（<span className="syntax-string">「言序」</span>）；</code></pre>
+      <div className="flex items-center gap-3 border-t border-white/10 px-6 py-3 text-xs text-white/55"><span className="size-2 rounded-full bg-emerald-400" />你好，言序！</div>
     </div>
   );
 }
@@ -36,28 +28,23 @@ export function HomePage() {
         <div className="shell grid items-center gap-14 lg:grid-cols-[1.03fr_.97fr] lg:gap-20">
           <div>
             <span className="eyebrow">Yanxu Programming Language</span>
-            <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">以中文<br /><span className="text-vermilion">写程序。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.6 是一门由 Rust 驱动的稳定中文编程语言。本版收紧 YXB 权限与资源边界、原生扩展装载和发布追溯；官方言包仍完全由言序编写，并以自带专用运行时的独立 Release 分发。</p>
-            <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>五分钟入门 <span aria-hidden="true">→</span></a><a className="button-secondary" href={repository}>查看源码</a></div>
+            <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">用中文，<br /><span className="text-vermilion">构建软件。</span></h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序是一门面向现代软件工程的中文编程语言，提供静态检查、包管理、字节码应用与可嵌入运行时。</p>
+            <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>快速开始 <span aria-hidden="true">→</span></a><a className="button-secondary" href={repository}>GitHub</a></div>
             <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
           </div>
           <CodeWindow />
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.6", "当前稳定版本"], ["双引擎", "树解释器 · 独立 VM"], ["25 库", "含进程与应用资源"], ["MIT", "自由、开放、可嵌入"]].map(([value, label], i) => <div key={value} className={`py-6 ${i % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${i > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${i === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
+      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.6", "稳定版本"], ["双引擎", "解释器与 VM"], ["25", "标准模块"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
 
       <section className="py-24 lg:py-28"><div className="shell">
-        <div className="grid items-end gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16"><div><span className="eyebrow">语言所长</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文是本体，<br />不是皮肤。</h2></div><p className="max-w-2xl text-lg leading-8 text-muted dark:text-[#aaa69b]">从关键字到错误信息，言序都直接用中文思考。它不是把另一门语言逐词翻译过来，而是在现代工程约束下寻找中文程序的自然表达。</p></div>
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{features.map(([index, icon, title, description]) => <article key={index} className="panel group min-h-72 p-7 transition hover:-translate-y-1 hover:border-vermilion/50"><div className="flex justify-between font-mono text-sm text-vermilion"><span>{index}</span><span className="font-kai text-3xl">{icon}</span></div><h3 className="mt-16 text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted dark:text-[#aaa69b]">{description}</p></article>)}</div>
+        <div className="max-w-2xl"><span className="eyebrow">核心能力</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文语法，完整工具链。</h2></div>
+        <div className="mt-12 grid gap-4 md:grid-cols-2">{capabilities.map(([title, description]) => <article key={title} className="panel p-7"><h3 className="text-xl font-bold">{title}</h3><p className="mt-3 leading-7 text-muted dark:text-[#aaa69b]">{description}</p></article>)}</div>
       </div></section>
 
-      <section className="border-y border-black/10 bg-paper-deep/55 py-24 dark:border-white/10 dark:bg-white/[0.025]"><div className="shell grid items-start gap-14 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
-        <div className="lg:sticky lg:top-28"><span className="eyebrow">一眼可读</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">少一些符号，<br />多一些语意。</h2><p className="mt-5 max-w-md text-muted dark:text-[#aaa69b]">无需先学古汉语。关键字简洁但不晦涩，代码结构与现代编程概念一一对应。</p><a className="button-secondary mt-6" href={`${docsUrl}language/`}>阅读语法参考</a></div>
-        <div className="border-t border-black/10 dark:border-white/10">{syntax.map(([label, code]) => <div key={label} className="grid grid-cols-[6rem_1fr] gap-4 border-b border-black/10 py-5 dark:border-white/10"><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span><code className="text-sm [overflow-wrap:anywhere]">{code}</code></div>)}</div>
-      </div></section>
-
-      <section className="py-24"><div className="shell"><div className="relative overflow-hidden rounded-[1.8rem] bg-vermilion p-8 text-[#fff8ec] sm:p-14 after:absolute after:-right-4 after:-bottom-28 after:font-kai after:text-[15rem] after:text-white/10 after:content-['言']"><h2 className="relative z-10 max-w-3xl text-[clamp(2.4rem,5vw,4rem)] leading-tight font-bold">写下你的第一卷言序程序。</h2><p className="relative z-10 mt-4 max-w-2xl text-white/75">安装命令行与官方 VS Code 扩展，从交互环境开始，或直接运行仓库里的完整示例。</p><a className="relative z-10 mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#fff8ec] px-5 text-sm font-semibold text-[#711b14] no-underline transition hover:-translate-y-0.5" href={sitePath("download/")}>选择你的平台 <span aria-hidden="true">→</span></a></div></div></section>
+      <section className="pb-24"><div className="shell"><div className="rounded-[1.8rem] bg-vermilion p-8 text-[#fff8ec] sm:p-12"><h2 className="max-w-3xl text-[clamp(2.2rem,5vw,3.5rem)] leading-tight font-bold">开始第一份言序项目。</h2><p className="mt-4 max-w-2xl text-white/80">安装稳定版工具链，阅读快速入门，或直接浏览语言实现。</p><div className="mt-7 flex flex-wrap gap-3"><a className="inline-flex min-h-11 items-center rounded-full bg-[#fff8ec] px-5 text-sm font-semibold text-[#711b14] no-underline" href={sitePath("download/")}>下载言序</a><a className="inline-flex min-h-11 items-center rounded-full border border-white/40 px-5 text-sm font-semibold text-white no-underline" href={docsUrl}>阅读文档</a></div></div></div></section>
     </>
   );
 }
