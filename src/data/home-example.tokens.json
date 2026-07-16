@@ -1,6 +1,6 @@
 {
   "language": "yanxu",
-  "source": "类 生灵 则\n    公 域 名：文；\n    公 法 初始化（名：文） 则\n        置 此.名 为 名；\n    终\n    公 法 自述（）：文 则\n        归 （「生灵：」 加 此.名）；\n    终\n终\n\n类 鹤 承 生灵 则\n    公 法 初始化（名：文） 则\n        父.初始化（名）；\n    终\n    公 法 自述（）：文 则\n        归 （父.自述（） 加 「，其为鹤」）；\n    终\n终\n\n定 来客：生灵 为 鹤（「皓羽」）；\n\n言 来客.自述（）；",
+  "source": "类 生灵 则\n    公 域 名：文；\n    法 初始化（名：文）则 置 此.名 为 名；终\n    法 自述（）：文 则 归 （「生灵：」 加 此.名）；终\n终\n类 鹤 承 生灵 则\n    法 初始化（名：文）则 父.初始化（名）；终\n    法 自述（）：文 则 归 （父.自述（） 加 「，其为鹤」）；终\n终\n定 来客：生灵 为 鹤（「皓羽」）；\n言 来客.自述（）；",
   "lines": [
     [
       {
@@ -86,18 +86,6 @@
         "fontStyle": 0
       },
       {
-        "content": "公",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
         "content": "法",
         "light": "#D73A49",
         "dark": "#F97583",
@@ -128,7 +116,7 @@
         "fontStyle": 0
       },
       {
-        "content": "） ",
+        "content": "）",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -138,11 +126,9 @@
         "light": "#D73A49",
         "dark": "#F97583",
         "fontStyle": 0
-      }
-    ],
-    [
+      },
       {
-        "content": "        ",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -182,14 +168,6 @@
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
       },
       {
         "content": "终",
@@ -201,18 +179,6 @@
     [
       {
         "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
-        "content": "公",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -258,11 +224,9 @@
         "light": "#D73A49",
         "dark": "#F97583",
         "fontStyle": 0
-      }
-    ],
-    [
+      },
       {
-        "content": "        ",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -314,14 +278,6 @@
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
       },
       {
         "content": "终",
@@ -338,7 +294,6 @@
         "fontStyle": 0
       }
     ],
-    [],
     [
       {
         "content": "类",
@@ -391,18 +346,6 @@
         "fontStyle": 0
       },
       {
-        "content": "公",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
         "content": "法",
         "light": "#D73A49",
         "dark": "#F97583",
@@ -433,7 +376,7 @@
         "fontStyle": 0
       },
       {
-        "content": "） ",
+        "content": "）",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -443,11 +386,9 @@
         "light": "#D73A49",
         "dark": "#F97583",
         "fontStyle": 0
-      }
-    ],
-    [
+      },
       {
-        "content": "        ",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -475,14 +416,6 @@
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
       },
       {
         "content": "终",
@@ -494,18 +427,6 @@
     [
       {
         "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
-        "content": "公",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -551,11 +472,9 @@
         "light": "#D73A49",
         "dark": "#F97583",
         "fontStyle": 0
-      }
-    ],
-    [
+      },
       {
-        "content": "        ",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -619,14 +538,6 @@
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
       },
       {
         "content": "终",
@@ -643,7 +554,6 @@
         "fontStyle": 0
       }
     ],
-    [],
     [
       {
         "content": "定",
@@ -694,7 +604,6 @@
         "fontStyle": 0
       }
     ],
-    [],
     [
       {
         "content": "言",
