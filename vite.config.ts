@@ -10,7 +10,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: resolve(__dirname, "index.html"),
-        download: resolve(__dirname, "download/index.html")
+        download: resolve(__dirname, "download/index.html"),
+        notFound: resolve(__dirname, "404.html")
       }
     }
   }
