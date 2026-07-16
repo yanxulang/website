@@ -1,8 +1,102 @@
 {
   "language": "yanxu",
-  "source": "法 问候（姓名：文）：文 则\n    归 （「你好，」 加 姓名）；\n终\n\n定 同伴 为 【「言序」，「开发者」】；\n\n逐 姓名 于 同伴 则\n    言 问候（姓名）；\n终",
+  "source": "类 生灵 则\n    公 域 名：文；\n    公 法 初始化（名：文） 则\n        置 此.名 为 名；\n    终\n    公 法 自述（）：文 则\n        归 （「生灵：」 加 此.名）；\n    终\n终\n\n类 鹤 承 生灵 则\n    公 法 初始化（名：文） 则\n        父.初始化（名）；\n    终\n    公 法 自述（）：文 则\n        归 （父.自述（） 加 「，其为鹤」）；\n    终\n终\n\n定 来客：生灵 为 鹤（「皓羽」）；\n\n言 来客.自述（）；",
   "lines": [
     [
+      {
+        "content": "类",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "生灵",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "公",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "域",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 名：",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "文",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": "；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "公",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
       {
         "content": "法",
         "light": "#D73A49",
@@ -16,13 +110,13 @@
         "fontStyle": 0
       },
       {
-        "content": "问候",
+        "content": "初始化",
         "light": "#6F42C1",
         "dark": "#B392F0",
         "fontStyle": 0
       },
       {
-        "content": "（姓名：",
+        "content": "（名：",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -34,7 +128,115 @@
         "fontStyle": 0
       },
       {
-        "content": "）：",
+        "content": "） ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "        ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "置",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "此",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": ".名 ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "为",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 名；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "公",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "法",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "自述",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（）：",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -60,7 +262,7 @@
     ],
     [
       {
-        "content": "    ",
+        "content": "        ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -78,7 +280,7 @@
         "fontStyle": 0
       },
       {
-        "content": "「你好，」",
+        "content": "「生灵：」",
         "light": "#032F62",
         "dark": "#9ECBFF",
         "fontStyle": 0
@@ -96,9 +298,340 @@
         "fontStyle": 0
       },
       {
-        "content": " 姓名）；",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "此",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": ".名）；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [],
+    [
+      {
+        "content": "类",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "鹤",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "承",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 生灵 ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "公",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "法",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "初始化",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（名：",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "文",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": "） ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "        ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "父",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": ".",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "初始化",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（名）；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "公",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "法",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "自述",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（）：",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "文",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "        ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "归",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " （",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "父",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": ".",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "自述",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（） ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "加",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "「，其为鹤」",
+        "light": "#032F62",
+        "dark": "#9ECBFF",
+        "fontStyle": 0
+      },
+      {
+        "content": "）；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
         "fontStyle": 0
       }
     ],
@@ -119,7 +652,7 @@
         "fontStyle": 0
       },
       {
-        "content": " 同伴 ",
+        "content": " 来客：生灵 ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -131,31 +664,31 @@
         "fontStyle": 0
       },
       {
-        "content": " 【",
+        "content": " ",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
       },
       {
-        "content": "「言序」",
-        "light": "#032F62",
-        "dark": "#9ECBFF",
+        "content": "鹤",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
         "fontStyle": 0
       },
       {
-        "content": "，",
+        "content": "（",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
       },
       {
-        "content": "「开发者」",
+        "content": "「皓羽」",
         "light": "#032F62",
         "dark": "#9ECBFF",
         "fontStyle": 0
       },
       {
-        "content": "】；",
+        "content": "）；",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
@@ -164,73 +697,27 @@
     [],
     [
       {
-        "content": "逐",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " 姓名 ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
-        "content": "于",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      },
-      {
-        "content": " 同伴 ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
-        "content": "则",
-        "light": "#D73A49",
-        "dark": "#F97583",
-        "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "    ",
-        "light": "#24292E",
-        "dark": "#E1E4E8",
-        "fontStyle": 0
-      },
-      {
         "content": "言",
         "light": "#D73A49",
         "dark": "#F97583",
         "fontStyle": 0
       },
       {
-        "content": " ",
+        "content": " 来客.",
         "light": "#24292E",
         "dark": "#E1E4E8",
         "fontStyle": 0
       },
       {
-        "content": "问候",
+        "content": "自述",
         "light": "#6F42C1",
         "dark": "#B392F0",
         "fontStyle": 0
       },
       {
-        "content": "（姓名）；",
+        "content": "（）；",
         "light": "#24292E",
         "dark": "#E1E4E8",
-        "fontStyle": 0
-      }
-    ],
-    [
-      {
-        "content": "终",
-        "light": "#D73A49",
-        "dark": "#F97583",
         "fontStyle": 0
       }
     ]

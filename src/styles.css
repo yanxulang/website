@@ -428,21 +428,22 @@ pre {
 .code-window {
   overflow: hidden;
   margin: 0;
-  border: 1px solid var(--line);
-  border-radius: 1.3rem;
-  background: var(--code-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.4rem;
+  background: #11120f;
+  color: #ece9df;
   box-shadow: var(--shadow);
 }
 
 .code-window-bar {
   display: flex;
-  min-height: 3.2rem;
+  min-height: 3rem;
   align-items: center;
-  border-bottom: 1px solid var(--line);
-  padding: 0.55rem 0.75rem 0.55rem 1rem;
-  color: var(--subtle);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 1rem;
+  color: rgba(255, 255, 255, 0.5);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 
 .code-window-bar > span:nth-child(2) {
@@ -460,10 +461,10 @@ pre {
 
 .code-window-mark i {
   display: block;
-  width: 0.46rem;
-  height: 0.46rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--ink) 20%, transparent);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .code-window-mark i:first-child {
@@ -473,50 +474,40 @@ pre {
 .code-window-source {
   overflow-x: auto;
   margin: 0;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1.75rem;
   font-size: 0.8rem;
-  line-height: 1.85;
+  line-height: 1.65;
   tab-size: 4;
 }
 
 .code-line {
-  display: grid;
+  display: block;
   min-width: max-content;
-  padding-right: 1.6rem;
-  grid-template-columns: 3.2rem 1fr;
-}
-
-.code-line-number {
-  padding-right: 0.95rem;
-  color: color-mix(in srgb, var(--muted) 48%, transparent);
-  text-align: right;
-  user-select: none;
 }
 
 .syntax-token {
-  color: var(--syntax-light);
-}
-
-.dark .syntax-token {
   color: var(--syntax-dark);
 }
 
 .code-window-output {
-  display: grid;
-  min-height: 3.6rem;
-  grid-template-columns: 1.5rem 1fr;
-  border-top: 1px solid var(--line);
-  background: color-mix(in srgb, var(--ink) 3%, transparent);
-  padding: 0.8rem 1.5rem;
-  color: var(--muted);
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  line-height: 1.65;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .code-window-output > span:first-child {
-  color: var(--accent);
-  font-weight: 800;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: none;
+  border-radius: 50%;
+  background: #34d399;
 }
 
 .code-window-output > span:last-child {
@@ -1508,10 +1499,6 @@ pre {
 
   .code-window-source {
     font-size: 0.72rem;
-  }
-
-  .code-line {
-    grid-template-columns: 2.6rem 1fr;
   }
 
   .workflow-list li {

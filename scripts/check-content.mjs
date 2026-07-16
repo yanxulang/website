@@ -25,8 +25,8 @@ for (const label of forbiddenNavigation) {
 assert.ok(!/guiDocsUrl|guiRepository|platformRepository|uiRepository/.test(home), "首页不得突出 GUI 仓库或专题入口");
 assert.ok(!/guiDocsUrl|guiRepository|platformRepository|uiRepository/.test(download), "下载页不得突出 GUI 仓库或专题入口");
 
-assert.ok(example.source.includes("法 问候"));
-assert.deepEqual(example.output, ["你好，言序", "你好，开发者"]);
+assert.ok(example.source.includes("类 鹤 承 生灵"));
+assert.deepEqual(example.output, ["生灵：皓羽，其为鹤"]);
 assert.ok(!/TODO|待补|占位|lorem ipsum/i.test(`${home}\n${download}`), "用户可见页面含占位内容");
 
 function inspectHtml(file, canonical, { noindex = false, structured = false } = {}) {
