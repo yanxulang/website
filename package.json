@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run syntax:check && npm run content:check && tsc -b && vite build",
     "preview": "vite preview",
-    "check": "tsc -b --pretty false"
+    "check": "npm run syntax:check && npm run content:check && tsc -b --pretty false",
+    "content:check": "node scripts/check-content.mjs",
+    "syntax:generate": "node scripts/generate-syntax.mjs",
+    "syntax:check": "node scripts/generate-syntax.mjs --check",
+    "syntax:upstream": "node scripts/generate-syntax.mjs --check --upstream"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -19,6 +23,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.0.0",
+    "shiki": "^4.3.1",
     "tailwindcss": "^4.3.0",
     "typescript": "~5.9.3",
     "vite": "^8.0.0"

@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-export function CopyButton({ value, compact = false }: { value: string; compact?: boolean }) {
+export function CopyButton({
+  value,
+  compact = false,
+  label = "复制命令"
+}: {
+  value: string;
+  compact?: boolean;
+  label?: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
@@ -17,12 +25,10 @@ export function CopyButton({ value, compact = false }: { value: string; compact?
     <button
       type="button"
       onClick={copy}
-      className={compact
-        ? "shrink-0 rounded-lg px-3 py-2 text-xs text-current transition hover:bg-black/5 dark:hover:bg-white/10"
-        : "button-secondary shrink-0 px-4 text-xs"}
-      aria-label="复制命令"
+      className={`copy-button ${compact ? "is-compact" : ""}`}
+      aria-label={copied ? "已复制" : label}
     >
-      {copied ? "已复制" : "复制"}
+      <span aria-live="polite">{copied ? "已复制" : "复制"}</span>
     </button>
   );
 }

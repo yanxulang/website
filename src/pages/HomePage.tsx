@@ -1,84 +1,296 @@
 import { CopyButton } from "../components/CopyButton";
+import { YanxuCode } from "../components/YanxuCode";
 import {
   docsUrl,
-  guiDocsUrl,
-  guiRepository,
-  platformRepository,
+  ecosystemDocsUrl,
+  gettingStartedUrl,
+  languageDocsUrl,
   repository,
   sitePath,
-  uiRepository,
-  unixInstall
+  toolingDocsUrl,
+  unixInstall,
+  version,
+  vscodeRepository,
+  yanbaoRepository,
+  yanjuRepository
 } from "../lib";
 
 const capabilities = [
-  ["中文表达", "中文关键字、标识符与诊断信息，支持全角和半角标点。"],
-  ["工程工具", "静态检查、格式化、测试、包管理、LSP、DAP 与 ABI v2。"],
-  ["桌面 GUI", "言窗与言界两条原生路线，覆盖六个 Windows、macOS、Linux 目标。"],
-  ["明确边界", "模块导出、依赖锁图与文件、网络、GUI 等独立权限声明。"]
+  {
+    index: "01",
+    title: "类型与抽象",
+    description: "可选类型标注、联合与可空类型、分支收窄，以及类、继承和结构协议，让程序可以从灵活试写逐步走向明确边界。",
+    link: `${languageDocsUrl}basics/`
+  },
+  {
+    index: "02",
+    title: "模块与包",
+    description: "模块默认私有，以“公”声明导出；项目清单、完整依赖锁图与显式包导出共同约束代码和依赖边界。",
+    link: `${languageDocsUrl}modules/`
+  },
+  {
+    index: "03",
+    title: "两种执行路径",
+    description: "树解释器适合直接运行源码，独立字节码 VM 承载 YXB 应用；两条路径通过兼容语料持续校对语言语义。",
+    link: `${toolingDocsUrl}building-apps/`
+  },
+  {
+    index: "04",
+    title: "错误与任务",
+    description: "“试、救、抛”提供结构化错误与调用踪迹；协作任务支持等待、取消与确定性的组合执行。",
+    link: `${languageDocsUrl}errors/`
+  },
+  {
+    index: "05",
+    title: "标准能力",
+    description: "25 个版本化标准模块覆盖文字、容器、文件、数据、网络、字节、进程与资源，并显式标注平台和权限边界。",
+    link: `${languageDocsUrl}standard-library/`
+  }
 ];
 
-function CodeWindow() {
-  return (
-    <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-night text-[#ece9df] shadow-paper">
-      <div className="flex h-12 items-center border-b border-white/10 px-4 text-xs text-white/50">
-        <span className="mr-4 flex gap-1.5"><i className="size-2 rounded-full bg-vermilion" /><i className="size-2 rounded-full bg-white/25" /><i className="size-2 rounded-full bg-white/25" /></span>
-        对象与继承.yx
-      </div>
-      <pre className="overflow-x-auto p-6 text-[13px] leading-6 sm:p-7"><code><span className="syntax-keyword">类</span> 生灵 <span className="syntax-keyword">则</span>{"\n"}  <span className="syntax-keyword">公 域</span> 名：<span className="syntax-type">文</span>；{"\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">初始化</span>（名：<span className="syntax-type">文</span>）<span className="syntax-keyword">则</span> 置 此.名 为 名； <span className="syntax-keyword">终</span>{"\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">自述</span>（）：<span className="syntax-type">文</span> <span className="syntax-keyword">则</span> 归 <span className="syntax-string">「生灵：」</span>加 此.名； <span className="syntax-keyword">终</span>{"\n"}<span className="syntax-keyword">终</span>{"\n\n"}<span className="syntax-keyword">类</span> 鹤 <span className="syntax-keyword">承</span> 生灵 <span className="syntax-keyword">则</span>{"\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">初始化</span>（名：<span className="syntax-type">文</span>）<span className="syntax-keyword">则</span> 父.初始化（名）； <span className="syntax-keyword">终</span>{"\n"}  <span className="syntax-keyword">法</span> <span className="syntax-function">自述</span>（）：<span className="syntax-type">文</span> <span className="syntax-keyword">则</span>{"\n"}    <span className="syntax-keyword">归</span> 父.自述（）加 <span className="syntax-string">「，其为鹤」</span>；{"\n"}  <span className="syntax-keyword">终</span>{"\n"}<span className="syntax-keyword">终</span>{"\n\n"}<span className="syntax-keyword">定</span> 来客：生灵 <span className="syntax-keyword">为</span> 鹤（<span className="syntax-string">「皓羽」</span>）；{"\n"}<span className="syntax-keyword">言</span> 来客.自述（）；</code></pre>
-      <div className="flex items-center gap-3 border-t border-white/10 px-6 py-3 text-xs text-white/55"><span className="size-2 rounded-full bg-emerald-400" />生灵：皓羽，其为鹤</div>
-    </div>
-  );
-}
+const workflow = [
+  ["运行", "yanxu 主.yx"],
+  ["检查", "yanxu check 主.yx"],
+  ["格式化", "yanxu fmt --write 主.yx"],
+  ["测试", "yanxu test tests"],
+  ["构建", "yanxu compile . -o build/应用.yxb"],
+  ["依赖", "yanbao add http"]
+];
+
+const ecosystem = [
+  {
+    title: "言包",
+    label: "项目与依赖",
+    description: "创建项目、管理完整依赖图、测试、构建和打包。",
+    href: yanbaoRepository
+  },
+  {
+    title: "VS Code 扩展",
+    label: "编辑器",
+    description: "高亮、格式化、语义编辑、LSP 与 DAP 调试入口。",
+    href: vscodeRepository
+  },
+  {
+    title: "言据",
+    label: "数据格式",
+    description: "面向中文文本的结构化数据格式与转换工具。",
+    href: yanjuRepository
+  },
+  {
+    title: "Web 与网络",
+    label: "应用生态",
+    description: "HTTP、HTML 与 Web 组织能力由独立包提供，并各自声明稳定范围。",
+    href: `${ecosystemDocsUrl}web/`
+  },
+  {
+    title: "第三方库",
+    label: "包生态",
+    description: "日志、校验、数据库、测试等可复用包，按项目版本独立演进。",
+    href: `${ecosystemDocsUrl}libraries/`
+  },
+  {
+    title: "桌面应用",
+    label: "应用生态",
+    description: "需要原生窗口时，可在生态指南中了解现有方案与实验路线。",
+    href: `${ecosystemDocsUrl}desktop/`
+  }
+];
+
+const quickStart = [
+  {
+    number: "01",
+    title: "安装工具链",
+    description: "安装器从正式 Release 选择当前平台构建，并校验 SHA-256。",
+    command: `${unixInstall}\ncurl -fsSL https://get.yanxu.dev/yanbao | sh`
+  },
+  {
+    number: "02",
+    title: "创建项目",
+    description: "生成项目清单、锁文件与第一份源码，不会自动创建 Git 仓库。",
+    command: "yanbao init 我的项目 --name 示例"
+  },
+  {
+    number: "03",
+    title: "运行程序",
+    description: "从任意目录指定项目路径；随后可以继续检查、测试和构建。",
+    command: "yanbao run --manifest-path 我的项目"
+  }
+];
 
 export function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden py-20 lg:py-28 after:pointer-events-none after:absolute after:-top-24 after:-right-8 after:-z-10 after:font-kai after:text-[30rem] after:leading-none after:text-vermilion/[0.06] after:content-['序']">
-        <div className="shell grid items-center gap-14 lg:grid-cols-[1.03fr_.97fr] lg:gap-20">
-          <div>
-            <span className="eyebrow">Yanxu Programming Language</span>
-            <h1 className="mt-5 font-serif text-[clamp(3.3rem,7vw,6rem)] leading-[.98] font-bold tracking-[-.065em]">用中文，<br /><span className="text-vermilion">构建软件。</span></h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted dark:text-[#aaa69b]">言序 1.1.8 提供静态检查、包管理、字节码应用与 ABI v2，并修复 Windows 图形回调栈；言窗和新的言界／言台路线可从同一份中文源码构建 Windows、macOS、Linux 原生桌面应用。</p>
-            <div className="mt-8 flex flex-wrap gap-3"><a className="button-primary" href={docsUrl}>快速开始 <span aria-hidden="true">→</span></a><a className="button-secondary" href={guiDocsUrl}>图形界面</a><a className="button-secondary" href={repository}>GitHub</a></div>
-            <div className="mt-4 flex max-w-xl items-center overflow-hidden rounded-xl border border-black/10 bg-black/[0.035] py-1.5 pr-1.5 pl-4 text-xs text-muted dark:border-white/10 dark:bg-white/[0.035] dark:text-[#aaa69b]"><code className="truncate">{unixInstall}</code><CopyButton compact value={unixInstall} /></div>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="shell hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">Yanxu Programming Language</p>
+            <h1 id="hero-title">
+              以现代中文，
+              <span>清晰组织程序。</span>
+            </h1>
+            <p className="hero-lede">
+              言序是一门以现代中文组织程序、面向工程实践的编程语言。中文关键字、类型与模块系统、解释器和字节码工具链，共同构成一套一致的语言设计。
+            </p>
+            <div className="hero-actions">
+              <a className="button-primary" href={gettingStartedUrl}>
+                开始使用 <span aria-hidden="true">→</span>
+              </a>
+              <a className="button-secondary" href={docsUrl}>
+                阅读文档
+              </a>
+            </div>
+            <p className="hero-meta">
+              <span>稳定版 {version}</span>
+              <span>MIT 开源</span>
+              <a href={repository}>查看源码 <span aria-hidden="true">↗</span></a>
+            </p>
           </div>
-          <CodeWindow />
+          <YanxuCode />
         </div>
       </section>
 
-      <section className="border-y border-black/10 dark:border-white/10"><div className="shell grid grid-cols-2 lg:grid-cols-4">{[["1.1.8", "当前源码版本"], ["双引擎", "解释器与 VM"], ["六目标", "原生桌面 GUI"], ["MIT", "开源许可"]].map(([value, label], index) => <div key={value} className={`py-6 ${index % 2 ? "border-l border-black/10 pl-6 dark:border-white/10" : ""} ${index > 1 ? "border-t border-black/10 lg:border-t-0 dark:border-white/10" : ""} ${index === 2 ? "lg:border-l lg:pl-6 dark:border-white/10" : ""}`}><strong className="block font-serif text-2xl">{value}</strong><span className="text-xs text-muted dark:text-[#aaa69b]">{label}</span></div>)}</div></section>
-
-      <section className="py-24 lg:py-28"><div className="shell">
-        <div className="max-w-2xl"><span className="eyebrow">核心能力</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">中文语法，完整工具链。</h2></div>
-        <div className="mt-12 grid gap-4 md:grid-cols-2">{capabilities.map(([title, description]) => <article key={title} className="panel p-7"><h3 className="text-xl font-bold">{title}</h3><p className="mt-3 leading-7 text-muted dark:text-[#aaa69b]">{description}</p></article>)}</div>
-      </div></section>
-
-      <section className="border-y border-black/10 bg-paper-deep/45 py-24 dark:border-white/10 dark:bg-white/[0.025] lg:py-28">
+      <section id="language" className="section-block scroll-target" aria-labelledby="language-title">
         <div className="shell">
-          <div className="grid items-end gap-7 lg:grid-cols-[1fr_.8fr]">
-            <div><span className="eyebrow">Native Desktop GUI</span><h2 className="mt-4 font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-.05em]">两条原生路线，<br />按项目选择。</h2></div>
-            <p className="max-w-xl leading-8 text-muted dark:text-[#aaa69b]">现有言窗继续提供成熟的立即模式控件；言界以言序实现保留模式控件树，并只经言台访问统一窗口、输入、文字与绘制原语。两条路线都不依赖浏览器或 WebView。</p>
+          <div className="section-intro language-intro">
+            <div>
+              <p className="eyebrow">语言理念</p>
+              <h2 id="language-title">中文进入语法，也进入工程边界。</h2>
+            </div>
+            <p>
+              言序并不把中文停留在英文关键字的表面替换。声明、控制流、类型标注、模块导入和诊断共同采用中文表达，同时保留现代工程需要的明确作用域、静态检查与版本化格式。
+            </p>
           </div>
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <article className="panel flex min-h-72 flex-col p-8">
-              <span className="text-xs font-bold tracking-[.14em] text-vermilion-dark uppercase dark:text-[#ef756a]">现有路线 · 稳定延续</span>
-              <h3 className="mt-4 font-serif text-3xl font-bold">言窗 yanxu-gui</h3>
-              <p className="mt-4 leading-7 text-muted dark:text-[#aaa69b]">立即模式 GUI，封装 egui／eframe／winit，适合已有应用和希望快速使用成熟控件的项目。</p>
-              <code className="mt-6 rounded-xl bg-black/[.055] px-4 py-3 text-xs dark:bg-white/[.055]">言序应用 → 言窗 → 操作系统</code>
-              <a className="mt-auto pt-7 text-sm font-semibold text-vermilion-dark no-underline dark:text-[#ef756a]" href={guiRepository}>查看言窗源码 <span aria-hidden="true">→</span></a>
+          <div className="principle-list">
+            <article>
+              <span>表达</span>
+              <h3>读得清程序结构</h3>
+              <p>简洁关键字与中文标识符服务于声明关系和执行顺序；全角、半角标点均可使用，格式化器负责统一输出。</p>
             </article>
-            <article className="overflow-hidden rounded-[1.25rem] border border-vermilion/35 bg-night p-8 text-[#f2eee4] shadow-paper">
-              <span className="text-xs font-bold tracking-[.14em] text-[#ef756a] uppercase">新路线 · 0.1.0</span>
-              <h3 className="mt-4 font-serif text-3xl font-bold">言界 + 言台</h3>
-              <p className="mt-4 leading-7 text-white/65">保留模式控件、布局、事件和文本编辑由言序实现；言台统一六个桌面目标的平台原语与 YXDR 整帧绘制。</p>
-              <code className="mt-6 block rounded-xl bg-white/[.07] px-4 py-3 text-xs text-white/80">言序应用 → 言界 → 言台 → 操作系统</code>
-              <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold"><a className="text-[#ef756a] no-underline" href={guiDocsUrl}>阅读完整指南 →</a><a className="text-white/70 no-underline hover:text-white" href={uiRepository}>言界源码</a><a className="text-white/70 no-underline hover:text-white" href={platformRepository}>言台源码</a></div>
+            <article>
+              <span>边界</span>
+              <h3>动态与静态可以并存</h3>
+              <p>小程序可以省略类型，长期项目可以逐步加入类型、公开 API、协议与权限声明，不必改用另一套语言。</p>
+            </article>
+            <article>
+              <span>工程</span>
+              <h3>从文卷走向完整项目</h3>
+              <p>同一工具链覆盖直接执行、检查、格式化、测试、依赖锁定和字节码应用，语言能力与项目流程彼此校验。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="pb-24"><div className="shell"><div className="rounded-[1.8rem] bg-vermilion p-8 text-[#fff8ec] sm:p-12"><h2 className="max-w-3xl text-[clamp(2.2rem,5vw,3.5rem)] leading-tight font-bold">开始第一份言序项目。</h2><p className="mt-4 max-w-2xl text-white/80">安装稳定版工具链，阅读快速入门，或直接浏览语言实现。</p><div className="mt-7 flex flex-wrap gap-3"><a className="inline-flex min-h-11 items-center rounded-full bg-[#fff8ec] px-5 text-sm font-semibold text-[#711b14] no-underline" href={sitePath("download/")}>下载言序</a><a className="inline-flex min-h-11 items-center rounded-full border border-white/40 px-5 text-sm font-semibold text-white no-underline" href={docsUrl}>阅读文档</a></div></div></div></section>
+      <section className="capability-band" aria-labelledby="capability-title">
+        <div className="shell">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow">语言能力</p>
+              <h2 id="capability-title">足够完整，也明确说明边界。</h2>
+            </div>
+            <a className="text-link" href={languageDocsUrl}>
+              阅读语言指南 <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div className="capability-list">
+            {capabilities.map((item) => (
+              <a href={item.link} className="capability-item" key={item.index}>
+                <span className="capability-index">{item.index}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="capability-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="tooling" className="section-block scroll-target" aria-labelledby="tooling-title">
+        <div className="shell tooling-layout">
+          <div className="tooling-copy">
+            <p className="eyebrow">工程工具链</p>
+            <h2 id="tooling-title">让反馈循环保持短而明确。</h2>
+            <p>
+              核心命令负责语言语义、应用制品与运行时；言包负责项目创建、依赖和常用工程流程；编辑器通过 LSP 与 DAP 复用同一实现。
+            </p>
+            <a className="text-link" href={toolingDocsUrl}>
+              查看工具链文档 <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <ol className="workflow-list" aria-label="言序开发流程">
+            {workflow.map(([label, command], index) => (
+              <li key={label}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{label}</strong>
+                <code>{command}</code>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="quickstart-band" aria-labelledby="quickstart-title">
+        <div className="shell">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow eyebrow-light">快速开始</p>
+              <h2 id="quickstart-title">三步进入第一份项目。</h2>
+            </div>
+            <p>以下命令适用于 macOS 与 Linux；Windows 安装方式和逐步说明见完整安装文档。</p>
+          </div>
+          <ol className="quickstart-list">
+            {quickStart.map((step) => (
+              <li key={step.number}>
+                <div className="quickstart-step-heading">
+                  <span>{step.number}</span>
+                  <h3>{step.title}</h3>
+                </div>
+                <p>{step.description}</p>
+                <div className="command-row">
+                  <code>{step.command}</code>
+                  <CopyButton compact value={step.command} label={`复制“${step.title}”命令`} />
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="quickstart-footer">
+            <a className="button-on-dark" href={gettingStartedUrl}>打开完整入门教程</a>
+            <a className="text-link-on-dark" href={sitePath("download/")}>查看所有平台下载</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ecosystem" className="section-block scroll-target" aria-labelledby="ecosystem-title">
+        <div className="shell">
+          <div className="section-intro ecosystem-intro">
+            <div>
+              <p className="eyebrow">生态概览</p>
+              <h2 id="ecosystem-title">围绕语言，各自保持清晰职责。</h2>
+            </div>
+            <p>核心语言不把所有能力塞进运行时。项目管理、编辑器、数据格式和应用框架以独立仓库演进，并通过版本与兼容说明建立边界。</p>
+          </div>
+          <div className="ecosystem-grid">
+            {ecosystem.map((item) => (
+              <a href={item.href} className="ecosystem-item" key={item.title}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <i aria-hidden="true">↗</i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="closing-section" aria-labelledby="closing-title">
+        <div className="shell closing-panel">
+          <p className="eyebrow eyebrow-light">从一份文卷开始</p>
+          <h2 id="closing-title">先写下清楚的程序，再让工具链带它走得更远。</h2>
+          <div>
+            <a className="button-on-dark" href={gettingStartedUrl}>开始使用</a>
+            <a className="text-link-on-dark" href={repository}>浏览语言实现 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

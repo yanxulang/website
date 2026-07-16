@@ -1,0 +1,238 @@
+{
+  "language": "yanxu",
+  "source": "法 问候（姓名：文）：文 则\n    归 （「你好，」 加 姓名）；\n终\n\n定 同伴 为 【「言序」，「开发者」】；\n\n逐 姓名 于 同伴 则\n    言 问候（姓名）；\n终",
+  "lines": [
+    [
+      {
+        "content": "法",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "问候",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（姓名：",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "文",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": "）：",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "文",
+        "light": "#005CC5",
+        "dark": "#79B8FF",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "归",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " （",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "「你好，」",
+        "light": "#032F62",
+        "dark": "#9ECBFF",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "加",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 姓名）；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [],
+    [
+      {
+        "content": "定",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 同伴 ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "为",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 【",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "「言序」",
+        "light": "#032F62",
+        "dark": "#9ECBFF",
+        "fontStyle": 0
+      },
+      {
+        "content": "，",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "「开发者」",
+        "light": "#032F62",
+        "dark": "#9ECBFF",
+        "fontStyle": 0
+      },
+      {
+        "content": "】；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [],
+    [
+      {
+        "content": "逐",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 姓名 ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "于",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " 同伴 ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "则",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "    ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "言",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      },
+      {
+        "content": " ",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      },
+      {
+        "content": "问候",
+        "light": "#6F42C1",
+        "dark": "#B392F0",
+        "fontStyle": 0
+      },
+      {
+        "content": "（姓名）；",
+        "light": "#24292E",
+        "dark": "#E1E4E8",
+        "fontStyle": 0
+      }
+    ],
+    [
+      {
+        "content": "终",
+        "light": "#D73A49",
+        "dark": "#F97583",
+        "fontStyle": 0
+      }
+    ]
+  ]
+}
