@@ -26,7 +26,14 @@ if (pages.length === 0) {
 const failures = [];
 for (const page of pages) {
   const html = fs.readFileSync(page, "utf8");
-  const ids = new Set([...html.matchAll(/\sid=["']([^"']+)["']/g)].map((match) => match[1]));
+  if (!/<html[^>]+lang=["']zh-CN["']/.test(html)) {
+    failures.push(`${path.relative(site, page)} → 缺少 zh-CN 语言标识`);
+  }
+  const allIds = [...html.matchAll(/\sid=["']([^"']+)["']/g)].map((match) => match[1]);
+  const ids = new Set(allIds);
+  if (ids.size !== allIds.length) {
+    failures.push(`${path.relative(site, page)} → 含有重复 id`);
+  }
   for (const match of html.matchAll(/\s(?:href|src)=["']([^"']+)["']/g)) {
     const link = match[1];
     if (/^(?:https?:|mailto:|data:)/.test(link)) continue;
@@ -39,6 +46,18 @@ for (const page of pages) {
     if (!fs.existsSync(target)) failures.push(`${path.relative(site, page)} → ${link}`);
     if (!pathname && hash && !ids.has(hash)) failures.push(`${path.relative(site, page)} → #${hash}`);
   }
+}
+
+for (const required of ["index.html", "download/index.html", "404.html", "icon.svg", "robots.txt", "sitemap.xml"]) {
+  if (!fs.existsSync(path.join(site, required))) failures.push(`缺少生产文件：${required}`);
+}
+
+for (const entry of fs.readdirSync(path.join(site, "assets"), { withFileTypes: true })) {
+  if (!entry.isFile()) continue;
+  const absolute = path.join(site, "assets", entry.name);
+  const bytes = fs.statSync(absolute).size;
+  if (entry.name.endsWith(".js") && bytes > 260_000) failures.push(`${entry.name} 超过 260 kB`);
+  if (entry.name.endsWith(".css") && bytes > 45_000) failures.push(`${entry.name} 超过 45 kB`);
 }
 
 if (failures.length) {

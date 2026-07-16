@@ -18,6 +18,33 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run syntax:upstream
       - run: npm run check
       - run: npm run build
       - run: node check-site.mjs dist
+
+  language-example:
+    name: 首页言序示例
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: 检出言序 1.1.8
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          repository: YanXuLang/yanxu
+          ref: v1.1.8
+          path: target/yanxu-core
+      - name: 构建言序
+        run: cargo build --manifest-path target/yanxu-core/Cargo.toml --locked --bin yanxu
+      - name: 核对首页示例
+        shell: bash
+        run: |
+          set -euo pipefail
+          core="$GITHUB_WORKSPACE/target/yanxu-core/target/debug/yanxu"
+          node -e 'const fs=require("node:fs"); const value=require("./src/data/home-example.json"); fs.writeFileSync(process.env.RUNNER_TEMP + "/首页.yx", value.source + "\n")'
+          "$core" check "$RUNNER_TEMP/首页.yx"
+          "$core" fmt "$RUNNER_TEMP/首页.yx" > "$RUNNER_TEMP/格式化.yx"
+          cmp "$RUNNER_TEMP/首页.yx" "$RUNNER_TEMP/格式化.yx"
+          actual="$("$core" "$RUNNER_TEMP/首页.yx")"
+          expected="$(node -p 'require("./src/data/home-example.json").output.join("\n")')"
+          test "$actual" = "$expected"
